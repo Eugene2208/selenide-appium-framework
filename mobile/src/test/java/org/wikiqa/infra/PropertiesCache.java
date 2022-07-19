@@ -1,4 +1,4 @@
-package PropertyHelper;
+package org.wikiqa.infra;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,11 +1,8 @@
 package org.wikiqa.infra;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.SupportsRotation;
-import PropertyHelper.PropertiesCache;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
