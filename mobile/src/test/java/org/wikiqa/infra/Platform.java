@@ -1,5 +1,6 @@
 package org.wikiqa.infra;
 
+import PropertyHelper.PropertiesCache;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
@@ -29,7 +30,7 @@ public class Platform {
   }
 
   AppiumDriver getDriver() throws MalformedURLException {
-    URL URL = new URL("http://127.0.0.1:4723/wd/hub");
+    URL URL = new URL(PropertiesCache.getInstance().getProperty("appiumServerUrl"));
     if (isAndroid()) {
       return new AndroidDriver(URL, getAndroidDesiredCapabilities());
     }
@@ -52,12 +53,11 @@ public class Platform {
   private Capabilities getAndroidDesiredCapabilities() {
     UiAutomator2Options options = new UiAutomator2Options();
     options.setCapability("platformName", "Android");
-    options.setCapability("deviceName", "Android Emulator");
+    options.setCapability("deviceName", "9c6ceb8e");
     options.setCapability("version", "4.4.2");
     options.setCapability("automationName", "Appium");
-    options.setCapability("appPackage", "org.wikipedia");
-    options.setCapability("appActivity", ".main.MainActivity");
-    options.setCapability("app", resourcePath("apks/org.wikipedia.apk"));
+    options.setCapability("appActivity", "org.chromium.chrome.browser.ChromeTabbedActivity");
+    options.setCapability("appPackage", "com.android.chrome");
     options.setCapability("newCommandTimeout", 11);
     return options;
   }

@@ -6,7 +6,6 @@ task android(type: Test) {
   useJUnitPlatform{
     includeTags 'mobile'
   }
-  environment 'PLATFORM', 'android'
 }
 
 task ios(type: Test) {

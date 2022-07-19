@@ -15,11 +15,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 
 abstract public class SearchPageObject extends MainPageObject {
-  @AndroidFindBy(xpath = "//*[contains(@text, 'Search Wikipedia')]")
+  @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View/android.view.View/android.view.View[1]/android.view.View[3]/android.widget.Button")
   @iOSXCUITFindBy(xpath = "//XCUIElementTypeSearchField[@name=\"Search Wikipedia\"]")
   private SelenideElement SEARCH_INIT_ELEMENT;
 
-  @AndroidFindBy(xpath = "//*[contains(@text, 'Search…')]")
+  @AndroidFindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.FrameLayout[2]/android.webkit.WebView/android.view.View[2]/android.view.View/android.view.View[1]/android.view.View/android.widget.EditText")
   @iOSXCUITFindBy(xpath = "//XCUIElementTypeApplication[@name='Wikipedia']/XCUIElementTypeWindow[1]/XCUIElementTypeOther[2]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeSearchField")
   private SelenideElement SEARCH_INPUT;
 
@@ -40,7 +40,7 @@ abstract public class SearchPageObject extends MainPageObject {
   private SelenideElement SEARCH_RESULTS_EMPTY_MESSAGE;
 
   public void initSearchInput() {
-    SEARCH_INIT_ELEMENT.shouldHave(Platform.getInstance().isIOS() ? name("Search Wikipedia") : text("Search Wikipedia"));
+//    SEARCH_INIT_ELEMENT.shouldHave(Platform.getInstance().isIOS() ? name("Search Wikipedia") : text("Search Wikipedia"));
 
     SEARCH_INIT_ELEMENT.shouldBe(visible.because("Search init element should be visible and clickable")).click();
     if (Platform.getInstance().isIOS()) {
